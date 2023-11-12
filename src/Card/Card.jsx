@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const Card = ({ coffee }) => {
@@ -50,7 +52,7 @@ const Card = ({ coffee }) => {
                     <div className="card-actions justify-end items-center">
                         <div className="join join-vertical space-y-2">
                             <button className="btn join-item">View</button>
-                            <button className="btn join-item">Eidit</button>
+                            <Link to={`/addCoffee/${_id}`}><button className="btn join-item">Eidit</button></Link>
                             <button onClick={() => handelDelete(_id)} className="btn join-item">X</button>
                         </div>
                     </div>
@@ -59,5 +61,7 @@ const Card = ({ coffee }) => {
         </div>
     );
 };
-
+Card.propTypes = {
+    coffee: PropTypes.object.isRequired,
+}
 export default Card;
