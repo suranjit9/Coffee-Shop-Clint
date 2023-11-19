@@ -11,15 +11,11 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loder, setLoder]= useState(true);
     const googleProvider = new GoogleAuthProvider();
-    //---------------------------------Json file Lode useState Start--------------------------------- 
-    const [servicesTitle, setServicesTitle] = useState([]);
-    const [servicesDis, setServicesDis] = useState([]);
-    //---------------------------------Json file Lode useState End--------------------------------- 
 
 
-    const userCreate =(email, password, name)=>{
+    const userCreate =(email, password)=>{
         setLoder(true);
-        return createUserWithEmailAndPassword(auth, email, password, name);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
     const singIn =(email, password)=>{
         setLoder(true);
@@ -56,8 +52,7 @@ const AuthProvider = ({children}) => {
         logOut,
         passwordRestor,
         googleSingup,
-        servicesTitle,
-        servicesDis,
+       
     };
     return (
         <authContext.Provider value={authInfo}>
