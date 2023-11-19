@@ -49,13 +49,15 @@ const Card = ({ coffee }) => {
                         <p className="text-left">{Quantity}</p>
                     </div>
 
-                    <div className="card-actions justify-end items-center">
+                    
+                    <div className="card-actions justify-end items-center  ">
                         <div className="join join-vertical space-y-2">
                             <button className="btn join-item">View</button>
                             <Link to={`/addCoffee/${_id}`}><button className="btn join-item">Eidit</button></Link>
                             <button onClick={() => handelDelete(_id)} className="btn join-item">X</button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
