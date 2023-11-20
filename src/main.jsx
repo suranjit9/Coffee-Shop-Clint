@@ -12,6 +12,7 @@ import CardUbdat from './Card/CardUbdat';
 import Login from './Leyout/LogIn/Login';
 import SingUp from './Leyout/SingUp/SingUp';
 import AuthProvider from './Provider/AuthProvider';
+import Protedter from './Protector/Protedter';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/addCoffee',
-        element:<AddCoffee/>
+        element:<Protedter><AddCoffee></AddCoffee></Protedter>
       },
       {
         path:'/addCoffee/:id',

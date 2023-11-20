@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import { Link, json } from "react-router-dom";
+import { useContext } from "react";
+import { Link  } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 const SingUp = () => {
     const {googleSingup, userCreate} = useContext(authContext);
-    const [info, setinfo] = useState(null);
+    // console.log(user);
     const hendalEmail = e =>{
         e.preventDefault();
         const newFrom = new FormData(e.currentTarget)
@@ -13,7 +13,7 @@ const SingUp = () => {
         const lastname = newFrom.get('lastName');
         const email = newFrom.get('email');
         const password = newFrom.get('password');
-        let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
+        // let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
         
         // if(password.match(check)){
         //     console.log("Your password is strong.");
