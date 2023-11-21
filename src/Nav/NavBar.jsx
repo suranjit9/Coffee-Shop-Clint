@@ -9,8 +9,11 @@ const NavBar = () => {
          <li><NavLink to={'/'}>Home</NavLink></li>
         {user && <li><NavLink to={'/addCoffee'}>Add Coffee</NavLink></li>}
         <li><NavLink to={'/About'}>About Us</NavLink></li>
-        <li><NavLink to={'/Contact'}>Contact</NavLink></li>
-        <li className="text-red-600 font-bold"><NavLink to={'/Booking'}>Booking</NavLink></li>
+        {user? "" :<>
+        <li><NavLink to={'/singUp'}>Sing UP</NavLink></li>
+        <li className="text-red-600 font-bold"><NavLink to={'/login'}>Log in</NavLink></li>
+        </>}
+        
     </>
     const hendalSingOut = () =>{
         logOut();

@@ -13,22 +13,22 @@ const SingUp = () => {
         const lastname = newFrom.get('lastName');
         const email = newFrom.get('email');
         const password = newFrom.get('password');
-        // let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
+        let check = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/;
         
-        // if(password.match(check)){
-        //     console.log("Your password is strong.");
-        // }else {
-        //     return swal(`Oppo!Your Password Is So Week` );
+        if(password.match(check)){
+            console.log("Your password is strong.");
+        }else {
+            return Swal.fire(`Oppo!Your Password Is So Week`);
             
-        //   }
+          }
         console.log(firstname, lastname, email, password);
         userCreate(email, password)
         .then(result =>{
             console.log(result.user);
             
             const createdAC = result.user?.metadata?.creationTime;
-            const listSingIn = result.user?.metadata?.lastSignInTime;
-            const user = {email, createACdate:createdAC, lastTimeLogIn:listSingIn};
+            
+            const user = {email, createACdate:createdAC};
             fetch('http://localhost:5000/user',{
                 method:"POST",
                 headers:{
@@ -44,7 +44,7 @@ const SingUp = () => {
                 })
         })
 
-        .then()
+        .catch()
     }
     
     return (
